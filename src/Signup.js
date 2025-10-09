@@ -44,10 +44,10 @@ function SignUp () {
   return (
 
     <>
-    <div className ="h-140">
+    <div className ="">
 
     <form onSubmit = {handleSignup}>  
-    <div className ="bg-gray-100 w-120 h-100 ml-125 mt-25 relative">
+    <div className ="bg-gray-100 w-120 h-120 relative pt-10 2xl:ml-180 2xl:mt-20 xl:ml-128 lg:ml-53 md:ml-31 md:mt-5 ml-35 mt-10">
    
     <h2 className="text-2xl font-bold text-center mb-4">Skapa konto</h2>
     <div className ="grid">

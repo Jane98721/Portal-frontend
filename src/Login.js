@@ -41,10 +41,10 @@ function Login () {
   return (
 
     <>
-    <div className ="relative bg-linear-to-r/increasing from-indigo-500 to-teal-400 h-183">
-    <form className ="pt-25" onSubmit = {handleLogin}>
+    <div className ="relative bg-linear-to-r/increasing from-indigo-500 to-teal-400">
+    <form className ="" onSubmit = {handleLogin} >
         
-    <div className ="bg-gray-100 w-100 h-130 ml-135 relative pt-10">
+    <div className ="bg-gray-100 w-100 h-130 relative pt-5 2xl:ml-190 xl:ml-140 lg:ml-53 md:ml-45 md:mt-10 ml-45 mt-10">
     <h2 className ="text-2xl text-center font-bold">Logga in</h2>
     <div className ="grid mt-20">
     <input className ="border-2 rounded-2xl pl-2 mb-3"
