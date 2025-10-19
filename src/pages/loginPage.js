@@ -42,8 +42,14 @@ return (
 <div className ="relative">
   <form onSubmit = {handleLogin} >
 
-    <div className ="bg-gray-100 border-2 w-100 h-120 relative pt-5 2xl:ml-190 xl:ml-140 lg:ml-53 md:ml-45 
-                      md:mt-10 ml-45 mt-10">
+    <div className ="bg-gray-100 border-2 relative pt-5 
+                      2xl:w-120 2xl:h-130 2xl:ml-190
+                      
+                      w-100 h-120 
+                      xl:ml-140 
+                      lg:ml-53 
+                      md:ml-45 md:mt-10 
+                      ml-45 mt-10">
 
       <h2 className ="text-2xl text-center font-bold"> 
         Logga in 

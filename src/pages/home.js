@@ -17,7 +17,7 @@ function Home () {
 
     {showLogin ? <Login/> : <SignUp/>}
 
-     <p className ="absolute 2xl:top-120 2xl:left-205 xl:top-140 xl:left-155 lg:top-150 lg:left-68 
+     <p className ="absolute 2xl:top-154 2xl:left-205 xl:top-140 xl:left-155 lg:top-150 lg:left-68 
                     md:top-135 md:left-54 sm:top-140 sm:left-60 top-140 left-70">
       {showLogin ? ( 
         <> 

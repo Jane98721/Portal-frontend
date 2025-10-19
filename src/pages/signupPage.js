@@ -12,6 +12,7 @@ const handleSignup = async (e) => {
 
   const body = {name, username, email, password}
 
+
   try {
   const response = await fetch ("http://localhost:3001/users/add", {
     method: "POST",
@@ -78,6 +79,8 @@ const handleSignup = async (e) => {
         <input
         className ="border-2 rounded-2xl pl-2"
         type ="password"
+        pattern = "(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}"
+        title ="Lösenordet måste innehålla minst 8 tecken, minst 1 siffra och 1 specialtecken" required
         value= {password}
         onChange = {(e) => setPassword(e.target.value)}
         placeholder="Lösenord">
