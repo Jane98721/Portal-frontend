@@ -3,18 +3,16 @@ import NavbarLoginPage from "../components/navbarLoginPage"
 import WelcomeText from "../components/welcomeText"
 
 function Welcome () {
-
+  
   return (
-    <>
-     <div className ="relative ">
+  <>
 
-      <NavbarLoginPage/>
-      
-      <WelcomeText text ="Welcome"/>
-
-      <HandleLogoutButton/>
-
+  <div className ="relative ">
+    <NavbarLoginPage/>
+    <WelcomeText text ="Welcome"/>
+    <HandleLogoutButton/>
     </div>
+    
     </>
   )
 }

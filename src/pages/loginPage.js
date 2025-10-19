@@ -2,88 +2,95 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 function Login () {
-
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [password, setPassword] = useState ("")
   const [username, setUsername] = useState ("")
   const navigate = useNavigate()
-
+  
   const handleLogin = async (e) => {
     e.preventDefault()
-
+    
     try {
-    const response = await fetch("http://localhost:3001/users/login", {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({username, password})
-    })
-
-    if(!response.ok) {
-      throw new Error ("Server error")
+      const response = await fetch("http://localhost:3001/users/login", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({username, password})
+      })
+      
+      if(!response.ok) {
+        throw new Error ("Server error")
+      }
+      
+      const data = await response.json()
+      
+      if(data.success) {
+        setIsLoggedIn(true)
+         navigate('/Welcome')
+        } else {
+          alert("Fel användarnamn eller lösenord")
+        }
+      } catch (error) {
+        console.error("error", error)
+        alert ("Fel användarnamn eller lösenord")
+      }
     }
-
-    const data = await response.json()
     
-    if(data.success) {
-    setIsLoggedIn(true)
-    navigate('/Welcome')
-    } else {
-      alert("Fel användarnamn eller lösenord")
-    }
-  } catch (error) {
-    console.error("error", error)
-    alert ("Fel användarnamn eller lösenord")
-  }
-}
-
-return (
-
-<>
-<div className ="relative">
-  <form onSubmit = {handleLogin} >
-
-    <div className ="bg-gray-100 border-2 relative pt-5 
-                      2xl:w-120 2xl:h-130 2xl:ml-190
-                      
-                      w-100 h-120 
-                      xl:ml-140 
-                      lg:ml-53 
-                      md:ml-45 md:mt-10 
-                      ml-45 mt-10">
-
-      <h2 className ="text-2xl text-center font-bold"> 
-        Logga in 
-      </h2>
+    return (
     
-    <div className ="grid mt-20">
+    <>
+    <div className ="relative">
+      
+      <form onSubmit = {handleLogin} >
+        
+        <div className ="bg-gray-100 border-2 relative pt-5 
+        2xl:w-150 2xl:h-140 2xl:ml-150 2xl:mt-20
+        xl:w-120 xl:h-130 xl:ml-125 
+        lg:ml-80
+        md:ml-50 md:mt-10 
+        w-100 h-120 ml-6 mt-10">
+          
+          <h2 className ="text-2xl text-center font-bold
+          2xl:text-4xl"> 
+          Logga in 
+          </h2>
+          
+          <div className ="grid mt-20">
+            
+            <input 
+            className ="border-2 rounded-2xl pl-2 mb-3 ml-1 w-98
+            2xl:w-147
+            xl:w-117"
+            type ="text"
+            value= {username}
+            onChange = {(e) => setUsername(e.target.value)}
+            placeholder="Användarnamn">
 
-      <input 
-      className ="border-2 rounded-2xl pl-2 mb-3 ml-1 w-98"
-      type ="text"
-      value= {username}
-      onChange = {(e) => setUsername(e.target.value)}
-      placeholder="Användarnamn">
-      </input>
+            </input>
+            
+            <input 
+            className ="border-2 rounded-2xl pl-2 ml-1 w-98
+            2xl:w-147
+            xl:w-117"
+            type ="password"
+            value= {password}
+            onChange = {(e) => setPassword(e.target.value)}
+            placeholder="Lösenord">
 
-      <input 
-      className ="border-2 rounded-2xl pl-2 ml-1 w-98"
-      type ="password"
-      value= {password}
-      onChange = {(e) => setPassword(e.target.value)}
-      placeholder="Lösenord">
-      </input>
-
-      <button 
-       className ="border-2 rounded-2xl mt-10 ml-1 w-98 hover:cursor-pointer hover:bg-gray-200" 
-       type ="submit"> 
-        Logga in
-       </button>
-
-     </div>
-    </div>
-  </form>
-</div>
-</>
+            </input>
+            
+            <button 
+            className ="border-2 rounded-2xl mt-10 ml-1 w-98 
+            hover:cursor-pointer hover:bg-gray-200
+            2xl:w-147
+            xl:w-117" 
+            type ="submit"> 
+            Logga in
+            </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </>
 )}
 
 export default Login
