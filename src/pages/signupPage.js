@@ -102,7 +102,8 @@ function SignUp () {
             md:w-114"
             type ="password"
             pattern = "(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}"
-            title ="Lösenordet måste innehålla minst 8 tecken, minst 1 siffra och 1 specialtecken" required
+            title ="Lösenordet måste innehålla minst 8 tecken, 
+            minst 1 siffra och 1 specialtecken" required
             value= {password}
             onChange = {(e) => setPassword(e.target.value)}
             placeholder="Lösenord">
@@ -110,7 +111,8 @@ function SignUp () {
             </input>
             
             <button 
-            className ="border-2 rounded-2xl mt-10 hover:cursor-pointer hover:bg-gray-200 ml-3 w-90
+            className ="border-2 rounded-2xl mt-10 hover:cursor-pointer hover:bg-gray-200 
+            ml-3 w-90
             2xl:w-147 2xl:ml-1
             xl:w-114
             lg:w-114

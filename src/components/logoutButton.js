@@ -10,7 +10,8 @@ const HandleLogoutButton = () => {
   return ( 
   <button 
   onClick = {handleLogout} 
-  className ="border-2 w-25 font-bold absolute top-10 hover:cursor-pointer hover:bg-gray-200">
+  className ="border-2 w-30 h-10 font-bold absolute top-8 left-3
+   hover:cursor-pointer hover:bg-gray-200">
     Logga ut
     </button>
     );
